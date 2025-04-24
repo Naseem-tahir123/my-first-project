@@ -1,36 +1,55 @@
-# Factorial Calculator
+# Python Math Utilities
 
-A simple Python program that calculates the factorial of a number using recursion.
-
-## Description
-
-This program provides a function to calculate the factorial of a non-negative integer. The factorial of a number n (written as n!) is the product of all positive integers less than or equal to n.
-
-For example:
-- 5! = 5 × 4 × 3 × 2 × 1 = 120
-- 0! = 1 (by definition)
-
-## Usage
-
-```python
-from factorial import factorial
-
-# Calculate factorial of 5
-result = factorial(5)
-print(result)  # Output: 120
-```
+A collection of mathematical utility functions implemented in Python, including factorial calculation (both recursive and iterative) and Fibonacci sequence generation.
 
 ## Features
 
-- Calculates factorial using recursive approach
-- Includes input validation for negative numbers
-- Simple and easy to use
-- Includes docstring documentation
+### Factorial Calculator
+- Two implementations:
+  - Recursive approach (memory-efficient for small numbers)
+  - Iterative approach (efficient for large numbers)
+- Comprehensive error handling
+- Type checking and validation
+- Overflow protection
+
+### Fibonacci Sequence Generator
+- Generates Fibonacci sequence up to nth number
+- Input validation
+- Type checking
+
+## Usage
+
+### Factorial Calculation
+```python
+from factorial import factorial, factorial_iterative
+
+# For small numbers, both implementations work well
+number = 5
+result_recursive = factorial(number)      # Using recursive version
+result_iterative = factorial_iterative(number)  # Using iterative version
+
+# For large numbers, use the iterative version
+large_number = 1000
+result = factorial_iterative(large_number)  # More efficient for large numbers
+```
+
+### Fibonacci Sequence
+```python
+from factorial import fibonacci
+
+# Generate first 10 Fibonacci numbers
+n = 10
+fib_sequence = fibonacci(n)
+print(fib_sequence)  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+```
 
 ## Error Handling
 
-The function includes error handling for:
-- Negative numbers (raises ValueError)
+The functions include comprehensive error handling for:
+- Negative numbers
+- Non-integer inputs
+- Stack overflow (for recursive factorial)
+- Integer overflow
 
 ## Requirements
 
